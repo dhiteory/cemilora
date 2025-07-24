@@ -335,5 +335,172 @@
             if (e.key === "Escape" && modal.classList.contains('active')) closeModal();
         });
     </script>
+<!-- Tambahkan di akhir <body> sebelum </body> -->
+
+<!-- Floating More Info Button -->
+<div id="moreInfoBtn" style="position:fixed;left:50%;bottom:32px;transform:translateX(-50%);z-index:1100;">
+  <button style="
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:rgba(255,255,255,0.95);
+    border:none;
+    border-radius:32px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.12);
+    padding:12px 28px;
+    font-family:'Poppins', 'Segoe UI', Arial, sans-serif;
+    font-size:1.25em;
+    font-weight:600;
+    color:#388e3c;
+    letter-spacing:1px;
+    cursor:pointer;
+    outline:none;
+    transition:box-shadow 0.2s;
+  ">
+    <!-- Panah kiri -->
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#388e3c" style="vertical-align:middle;">
+      <path d="M12 16l-6-6h12z"/>
+    </svg>
+    More Info
+    <!-- Panah kanan -->
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="#388e3c" style="vertical-align:middle;">
+      <path d="M12 16l-6-6h12z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- More Info Popup -->
+<div id="infoModal" style="
+  display:none;
+  position:fixed;
+  z-index:2000;
+  left:0;top:0;width:100vw;height:100vh;
+  background:rgba(0,0,0,0.25);
+  justify-content:center;
+  align-items:center;
+  transition:background 0.3s;
+">
+  <div id="infoContent" style="
+    width:75vw;max-width:500px;max-height:80vh;
+    background:#636B2F;
+    border-radius:32px;
+    border:3px solid #111;
+    box-shadow:0 8px 32px rgba(0,0,0,0.18);
+    backdrop-filter:blur(12px) saturate(1.2);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    animation:infoPopIn 0.35s cubic-bezier(.4,2,.6,1);
+  ">
+    <div style="width:100%;padding:12px 0 0 0;text-align:center;">
+      <span style="
+        font-family:'Poppins', 'Segoe UI', Arial, sans-serif;
+        font-size:1.5em;
+        font-weight:700;
+        color:#fff;
+        letter-spacing:2px;
+        text-shadow:0 2px 8px rgba(0,0,0,0.12);
+      ">Information</span>
+    </div>
+    <div style="
+      flex:1;
+      width:90%;
+      margin:12px auto 18px auto;
+      background:#BA8E23; /* dark yellow */
+      border-radius:20px;
+      border:2px solid #222;
+      box-shadow:0 2px 12px rgba(0,0,0,0.08);
+      padding:24px 18px 18px 18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      min-height:160px;
+      max-height:calc(60vh - 40px);
+      overflow-y:auto;
+    ">
+      <div style="font-size:1.1em;color:#222;font-weight:600;margin-bottom:8px;">
+        About Us
+      </div>
+      <div style="font-size:1em;color:#333;margin-bottom:18px;text-align:center;">
+        Cemilora is a passionate team dedicated to bringing authentic Indonesian snacks to the world. We select, process, and deliver only the best quality snacks, ensuring every bite is a delightful experience. Taste the tradition, share the joy!
+      </div>
+      <div style="font-size:1.1em;color:#222;font-weight:600;margin-bottom:8px;">
+        Contact
+      </div>
+      <div style="font-size:1em;color:#333;text-align:center;">
+        WhatsApp: <a href="https://wa.me/6281234567890" style="color:#3D4127;text-decoration:none;font-weight:600;">+62 856-4666-6666</a><br>
+        Email: <a href="mailto:info@cemilora.com" style="color:#3D4127;text-decoration:none;font-weight:600;">info@cemilora.com</a><br>
+        Instagram: <a href="https://instagram.com/cemilora" style="color:#3D4127;text-decoration:none;font-weight:600;">@cemilora</a>
+      </div>
+    </div>
+    <button id="closeInfo" style="
+      position:absolute;top:16px;right:24px;
+      background:rgba(0,0,0,0.12);
+      border:none;
+      border-radius:50%;
+      width:36px;height:36px;
+      font-size:1.5em;
+      color:#fff;
+      cursor:pointer;
+      transition:background 0.2s;
+      font-weight:700;
+      z-index:10;
+    ">&times;</button>
+  </div>
+</div>
+
+<style>
+@keyframes infoPopIn {
+  from { transform:scale(0.92) translateY(40px); opacity:0; }
+  to   { transform:scale(1) translateY(0); opacity:1; }
+}
+@media (max-width:600px) {
+  #infoContent {
+    width:95vw !important;
+    max-width:98vw !important;
+    min-width:0 !important;
+    padding:0 !important;
+  }
+}
+</style>
+
+<script>
+const moreInfoBtn = document.getElementById('moreInfoBtn');
+const infoModal = document.getElementById('infoModal');
+const closeInfo = document.getElementById('closeInfo');
+
+// Show popup
+moreInfoBtn.addEventListener('click', function(){
+  infoModal.style.display = 'flex';
+  setTimeout(()=>{infoModal.style.background='rgba(0,0,0,0.38)';},10);
+  document.body.style.overflow = 'hidden';
+});
+
+// Hide popup
+closeInfo.addEventListener('click', function(){
+  infoModal.style.background='rgba(0,0,0,0.25)';
+  setTimeout(()=>{
+    infoModal.style.display = 'none';
+    document.body.style.overflow = '';
+  },180);
+});
+
+// Hide popup if click outside content
+infoModal.addEventListener('click', function(e){
+  if(e.target === infoModal){
+    closeInfo.click();
+  }
+});
+
+// Hide popup with ESC
+document.addEventListener('keydown', function(e){
+  if(e.key === "Escape" && infoModal.style.display === 'flex'){
+    closeInfo.click();
+  }
+});
+</script>
 </body>
 </html>
