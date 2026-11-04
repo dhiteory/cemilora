@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paranoid Negara — Argon2id AES-GCM Base85</title>
+  <style>*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/*! tailwindcss v3.4.18 | MIT License | https://tailwindcss.com*/*,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0}fieldset,legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::-moz-placeholder,textarea::-moz-placeholder{opacity:1;color:#9ca3af}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.right-1{right:.25rem}.right-2{right:.5rem}.top-0{top:0}.top-1{top:.25rem}.top-2{top:.5rem}.z-20{z-index:20}.col-span-2{grid-column:span 2/span 2}.col-span-8{grid-column:span 8/span 8}.mx-auto{margin-left:auto;margin-right:auto}.mb-2{margin-bottom:.5rem}.mb-4{margin-bottom:1rem}.mt-0\.5{margin-top:.125rem}.mt-1{margin-top:.25rem}.mt-1\.5{margin-top:.375rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-1\.5{height:.375rem}.h-2{height:.5rem}.h-3{height:.75rem}.h-3\.5{height:.875rem}.h-4{height:1rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-\[38px\]{height:38px}.h-\[46px\]{height:46px}.h-full{height:100%}.h-px{height:1px}.min-h-\[120px\]{min-height:120px}.min-h-\[132px\]{min-height:132px}.min-h-screen{min-height:100vh}.w-1\.5{width:.375rem}.w-3{width:.75rem}.w-3\.5{width:.875rem}.w-4{width:1rem}.w-8{width:2rem}.w-\[38px\]{width:38px}.w-full{width:100%}.max-w-\[480px\]{max-width:480px}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(.4,0,.6,1) infinite}@keyframes spin{to{transform:rotate(1turn)}}.animate-spin{animation:spin 1s linear infinite}.resize-none{resize:none}.list-decimal{list-style-type:decimal}.grid-cols-12{grid-template-columns:repeat(12,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:.25rem}.gap-1\.5{gap:.375rem}.gap-2{gap:.5rem}.gap-2\.5{gap:.625rem}.gap-3{gap:.75rem}.space-y-1>:not([hidden])~:not([hidden]){--tw-space-y-reverse:0;margin-top:calc(.25rem*(1 - var(--tw-space-y-reverse)));margin-bottom:calc(.25rem*var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-clip{overflow-x:clip}.rounded-\[10px\]{border-radius:10px}.rounded-\[12px\]{border-radius:12px}.rounded-\[16px\]{border-radius:16px}.rounded-\[18px\]{border-radius:18px}.rounded-\[8px\]{border-radius:8px}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-t{border-top-width:1px}.border-\[var\(--border\)\]{border-color:var(--border)}.border-\[var\(--border-2\)\]{border-color:var(--border-2)}.border-\[var\(--red-border\)\]{border-color:var(--red-border)}.border-amber-300{--tw-border-opacity:1;border-color:rgb(252 211 77/var(--tw-border-opacity,1))}.bg-\[\#11110f\]{--tw-bg-opacity:1;background-color:rgb(17 17 15/var(--tw-bg-opacity,1))}.bg-\[var\(--bg\)\]{background-color:var(--bg)}.bg-\[var\(--border\)\]{background-color:var(--border)}.bg-\[var\(--ink\)\]{background-color:var(--ink)}.bg-\[var\(--red\)\]{background-color:var(--red)}.bg-\[var\(--red-bg\)\]{background-color:var(--red-bg)}.bg-\[var\(--surface\)\]{background-color:var(--surface)}.bg-\[var\(--surface-2\)\]{background-color:var(--surface-2)}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235/var(--tw-bg-opacity,1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255/var(--tw-bg-opacity,1))}.bg-white\/10{background-color:hsla(0,0%,100%,.1)}.p-1{padding:.25rem}.p-2\.5{padding:.625rem}.p-3{padding:.75rem}.p-3\.5{padding:.875rem}.p-4{padding:1rem}.px-2\.5{padding-left:.625rem;padding-right:.625rem}.px-3{padding-left:.75rem;padding-right:.75rem}.px-3\.5{padding-left:.875rem;padding-right:.875rem}.px-4{padding-left:1rem;padding-right:1rem}.py-1{padding-top:.25rem;padding-bottom:.25rem}.py-2{padding-top:.5rem;padding-bottom:.5rem}.py-2\.5{padding-top:.625rem;padding-bottom:.625rem}.py-3{padding-top:.75rem;padding-bottom:.75rem}.pb-20{padding-bottom:5rem}.pb-4{padding-bottom:1rem}.pl-3\.5{padding-left:.875rem}.pl-4{padding-left:1rem}.pr-11{padding-right:2.75rem}.pt-2{padding-top:.5rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[12px\]{font-size:12px}.text-\[13px\]{font-size:13px}.text-\[14px\]{font-size:14px}.text-\[22px\]{font-size:22px}.text-\[9px\]{font-size:9px}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.1\]{line-height:1.1}.leading-\[1\.4\]{line-height:1.4}.leading-\[1\.5\]{line-height:1.5}.leading-\[1\.6\]{line-height:1.6}.leading-\[1\.7\]{line-height:1.7}.tracking-\[-0\.01em\]{letter-spacing:-.01em}.tracking-\[0\.08em\]{letter-spacing:.08em}.tracking-\[0\.14em\]{letter-spacing:.14em}.tracking-tight{letter-spacing:-.025em}.tracking-wide{letter-spacing:.025em}.text-\[\#e8e0cc\]{--tw-text-opacity:1;color:rgb(232 224 204/var(--tw-text-opacity,1))}.text-\[var\(--bg\)\]{color:var(--bg)}.text-\[var\(--ink\)\]{color:var(--ink)}.text-\[var\(--ink-2\)\]{color:var(--ink-2)}.text-\[var\(--ink-3\)\]{color:var(--ink-3)}.text-\[var\(--red\)\]{color:var(--red)}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6/var(--tw-text-opacity,1))}.text-amber-900{--tw-text-opacity:1;color:rgb(120 53 15/var(--tw-text-opacity,1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87/var(--tw-text-opacity,1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}.shadow{--tw-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1);--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color)}.shadow,.shadow-\[0_8px_30px_-12px_rgba\(0\2c 0\2c 0\2c 0\.18\)\]{box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.shadow-\[0_8px_30px_-12px_rgba\(0\2c 0\2c 0\2c 0\.18\)\]{--tw-shadow:0 8px 30px -12px rgba(0,0,0,.18);--tw-shadow-colored:0 8px 30px -12px var(--tw-shadow-color)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgba(0,0,0,.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.backdrop-blur{--tw-backdrop-blur:blur(8px)}.backdrop-blur,.backdrop-filter{backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.transition-colors{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.duration-300{transition-duration:.3s}:root{--bg:#f6f0de;--bg-2:#fdf8eb;--surface:#fff;--surface-2:#faf6ea;--ink:#1f1a13;--ink-2:#6b6252;--ink-3:#9a9181;--border:#e8dfc8;--border-2:#d9cdb0;--red:#c41e1e;--red-bg:#fde8e8;--red-border:#f5b5b5;--accent:#1a1a1a;--accent-2:#2e2e2e;--focus:#c41e1e}@media (prefers-color-scheme:dark){:root{--bg:#1c1a16;--bg-2:#25221d;--surface:#2c2822;--surface-2:#332f28;--ink:#f5efe0;--ink-2:#b8b0a0;--ink-3:#8a8478;--border:#3d3932;--border-2:#4a4640;--red:#ff4d4d;--red-bg:#3a2222;--red-border:#6b3333;--accent:#f5efe0;--accent-2:#e8dfc8;--focus:#ff6b6b}}*{font-variant-ligatures:common-ligatures}body,html{margin:0;padding:0}body{background:var(--bg);color:var(--ink);font-family:IBM Plex Sans,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}.mono{font-family:IBM Plex Mono,ui-monospace,SFMono-Regular,Menlo,monospace}.serif{font-family:Newsreader,Georgia,serif}.placeholder\:text-\[var\(--ink-3\)\]::-moz-placeholder{color:var(--ink-3)}.placeholder\:text-\[var\(--ink-3\)\]::placeholder{color:var(--ink-3)}.hover\:bg-\[var\(--accent-2\)\]:hover{background-color:var(--accent-2)}.hover\:bg-\[var\(--bg\)\]:hover{background-color:var(--bg)}.hover\:bg-\[var\(--surface-2\)\]:hover{background-color:var(--surface-2)}.hover\:bg-white\/15:hover{background-color:hsla(0,0%,100%,.15)}.hover\:text-\[var\(--ink\)\]:hover{color:var(--ink)}.focus\:border-\[var\(--border-2\)\]:focus{border-color:var(--border-2)}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow),var(--tw-ring-shadow),var(--tw-shadow,0 0 #0000)}.disabled\:cursor-not-allowed:disabled{cursor:not-allowed}.disabled\:opacity-50:disabled{opacity:.5}.dark\:bg-\[\#0f0e0c\]:is(.dark *){--tw-bg-opacity:1;background-color:rgb(15 14 12/var(--tw-bg-opacity,1))}.dark\:bg-amber-950\/30:is(.dark *){background-color:rgba(69,26,3,.3)}.dark\:text-amber-200:is(.dark *){--tw-text-opacity:1;color:rgb(253 230 138/var(--tw-text-opacity,1))}.dark\:text-emerald-300:is(.dark *){--tw-text-opacity:1;color:rgb(110 231 183/var(--tw-text-opacity,1))}@media (min-width:640px){.sm\:p-5{padding:1.25rem}.sm\:px-5{padding-left:1.25rem;padding-right:1.25rem}}</style>
+</head>
+<body>
+  <div id="root"><div class="min-h-screen w-full bg-[var(--bg)] text-[var(--ink)] overflow-x-clip" style="padding-top:var(--safe-area-inset-top);box-sizing:border-box"><style>@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap');</style><div class="w-full max-w-[480px] mx-auto px-4 pb-20"><header class="pt-6 pb-4 sticky top-0 z-20 bg-[var(--bg)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--bg)]/80" style="top:var(--safe-area-inset-top)"><div class="flex items-start justify-between gap-3"><div><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-[8px] bg-[var(--ink)] text-[var(--bg)] grid place-items-center"><i data-icon="lock" class="w-4 h-4"></i></div><h1 class="serif text-[22px] leading-[1.1] font-semibold tracking-tight">PARANOID NEGARA</h1></div><p class="mono text-[10px] tracking-[0.14em] text-[var(--ink-2)] mt-2 uppercase">Argon2id 256MB • AES-GCM • Base85</p></div><div class="shrink-0"><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[var(--red)] text-white text-[10px] font-semibold tracking-wide uppercase shadow-sm"><span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>Paranoid Mode</div></div></div><div class="mt-4 rounded-[10px] border border-[var(--red-border)] bg-[var(--red-bg)] px-3 py-2.5 flex gap-2.5"><i data-icon="shield-alert" class="w-4 h-4 text-[var(--red)] mt-0.5 shrink-0"></i><p id="banner-text" class="text-[11px] leading-[1.5] font-medium text-[var(--ink)]">PARANOID MODE - 256MB Argon2id asli + AES-GCM + Base85 — RAM intensif, memperlambat brute-force GPU/ASIC. Semua proses lokal di perangkatmu.</p></div></header><div class="mt-2 flex p-1 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-sm"><button id="tab-enc" type="button" class="flex-1 h-9 rounded-full text-[13px] font-semibold transition-all flex items-center justify-center gap-1.5 bg-[var(--ink)] text-[var(--bg)] shadow"><i data-icon="lock" class="w-3.5 h-3.5"></i> Enkripsi</button><button id="tab-dec" type="button" class="flex-1 h-9 rounded-full text-[13px] font-semibold transition-all flex items-center justify-center gap-1.5 text-[var(--ink-2)] hover:text-[var(--ink)]"><i data-icon="lock-open" class="w-3.5 h-3.5"></i> Dekripsi</button></div><div class="mt-4 rounded-[18px] border border-[var(--border)] bg-[var(--surface)] shadow-[0_8px_30px_-12px_rgba(0,0,0,0.18)] overflow-hidden"><div class="p-4 sm:p-5"><label for="input" class="flex items-center justify-between mb-2"><span class="mono text-[11px] font-semibold tracking-[0.08em] uppercase text-[var(--ink-2)] flex items-center gap-1.5"><i data-icon="file-text" class="w-3.5 h-3.5"></i><span id="input-label">Pesan Rahasia</span></span><span class="mono text-[10px] text-[var(--ink-3)]"><span id="char-count">0</span> char</span></label><textarea id="input" placeholder="Tulis pesan yang ingin dienkripsi dengan mode paranoid..." class="w-full min-h-[132px] rounded-[12px] border border-[var(--border)] bg-[var(--surface-2)] px-3.5 py-3 text-[14px] leading-[1.6] placeholder:text-[var(--ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--focus)]/30 focus:border-[var(--border-2)] resize-none" spellcheck="false"></textarea><div class="mt-4"><label for="pwd" class="mono text-[11px] font-semibold tracking-[0.08em] uppercase text-[var(--ink-2)] mb-2 flex items-center gap-1.5"><i data-icon="zap" class="w-3.5 h-3.5"></i> Sandi Paranoid</label><div class="relative"><input id="pwd" type="password" placeholder="Minimal 12 karakter, kombinasi kuat" autocomplete="off" class="w-full h-[46px] rounded-[12px] border border-[var(--border)] bg-[var(--surface-2)] pl-3.5 pr-11 text-[14px] placeholder:text-[var(--ink-3)] focus:outline-none focus:ring-2 focus:ring-[var(--focus)]/30 focus:border-[var(--border-2)]"><button id="toggle-pwd" type="button" class="absolute right-1 top-1 h-[38px] w-[38px] grid place-items-center rounded-[10px] hover:bg-[var(--bg)] text-[var(--ink-2)]" aria-label="Toggle password"><i id="eye-icon" data-icon="eye" class="w-4 h-4"></i></button></div><p class="mono text-[10px] text-[var(--ink-3)] mt-1.5 leading-[1.4]">Argon2id akan derive kunci 32-byte dari sandi ini + salt 16-byte random.</p></div><div id="busy" hidden class="mt-4 rounded-[12px] border border-[var(--border)] bg-[var(--surface-2)] p-3"><div class="flex items-center justify-between mb-2"><span class="mono text-[11px] font-semibold text-[var(--ink-2)] flex items-center gap-1.5"><i data-icon="cpu" class="w-3.5 h-3.5 animate-spin"></i> <span id="busy-text"></span></span><span id="busy-elapsed" class="mono text-[11px] font-semibold">0.0s</span></div><div class="h-2 w-full rounded-full bg-[var(--border)] overflow-hidden"><div id="busy-bar" class="h-full bg-[var(--ink)] transition-all duration-300" style="width:0%"></div></div></div><div id="status" hidden class="mt-3 mono text-[11px] text-[var(--ink-2)] bg-[var(--surface-2)] border border-[var(--border)] rounded-[10px] px-3 py-2"></div><div id="warnings"></div><div class="mt-5 grid grid-cols-12 gap-2"><button id="btn-run" type="button" class="col-span-8 h-[46px] rounded-[12px] bg-[var(--ink)] text-[var(--bg)] font-semibold text-[14px] tracking-[-0.01em] hover:bg-[var(--accent-2)] disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"><i id="run-icon" data-icon="lock" class="w-4 h-4"></i><span id="run-label">Enkripsi Paranoid</span></button><button id="btn-clear" type="button" class="col-span-2 h-[46px] rounded-[12px] border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-2)] grid place-items-center text-[var(--ink-2)]" title="Clear"><i data-icon="trash-2" class="w-4 h-4"></i></button><button id="btn-copy" type="button" class="col-span-2 h-[46px] rounded-[12px] border border-[var(--border)] bg-[var(--surface)] hover:bg-[var(--surface-2)] grid place-items-center text-[var(--ink-2)]" title="Copy"><i data-icon="copy" class="w-4 h-4"></i></button></div><div class="mt-5 grid grid-cols-3 gap-2"><div class="rounded-[12px] border border-[var(--border)] bg-[var(--surface-2)] p-2.5"><div class="mono text-[9px] uppercase tracking-[0.08em] text-[var(--ink-3)] flex items-center gap-1"><i data-icon="cpu" class="w-3 h-3"></i> RAM</div><div id="st-ram" class="mt-1 text-[13px] font-semibold">256 MB</div><div id="st-ram-sub" class="mono text-[10px] text-[var(--ink-3)]">paranoid</div></div><div class="rounded-[12px] border border-[var(--border)] bg-[var(--surface-2)] p-2.5"><div class="mono text-[9px] uppercase tracking-[0.08em] text-[var(--ink-3)] flex items-center gap-1"><i data-icon="clock-3" class="w-3 h-3"></i> Waktu</div><div id="st-time" class="mt-1 text-[13px] font-semibold">—</div><div id="st-time-sub" class="mono text-[10px] text-[var(--ink-3)]">Argon2id t=4</div></div><div class="rounded-[12px] border border-[var(--border)] bg-[var(--surface-2)] p-2.5"><div class="mono text-[9px] uppercase tracking-[0.08em] text-[var(--ink-3)]">Hemat</div><div id="st-save" class="mt-1 text-[13px] font-semibold">—</div><div class="mono text-[10px] text-[var(--ink-3)]">vs Base64</div></div></div><div id="result" hidden class="mt-5"><div class="h-px bg-[var(--border)] mb-4"></div><label for="output" id="result-label" class="mono text-[11px] font-semibold tracking-[0.08em] uppercase text-[var(--ink-2)] mb-2 block">Hasil Enkripsi Base85 (ringkas)</label><div class="relative"><textarea id="output" readonly class="w-full min-h-[120px] rounded-[12px] border border-[var(--border-2)] bg-[#11110f] dark:bg-[#0f0e0c] text-[#e8e0cc] mono text-[12px] leading-[1.6] p-3.5 focus:outline-none resize-none" spellcheck="false"></textarea><div class="absolute top-2 right-2 flex gap-1.5"><button id="btn-copy-out" type="button" class="h-7 px-2.5 rounded-[8px] bg-white/10 hover:bg-white/15 text-white mono text-[11px] font-semibold backdrop-blur flex items-center gap-1"><i data-icon="copy" class="w-3 h-3"></i> Copy</button></div></div><div id="sizes" hidden class="mt-3 rounded-[10px] bg-[var(--surface-2)] border border-[var(--border)] p-3 mono text-[11px] leading-[1.6] text-[var(--ink-2)]"><div class="flex justify-between"><span>Panjang Base64 (biasa):</span><span id="len-b64" class="font-semibold text-[var(--ink)]"></span></div><div class="flex justify-between"><span>Panjang Base85 (paranoid):</span><span id="len-b85" class="font-semibold text-[var(--ink)]"></span></div><div class="flex justify-between border-t border-[var(--border)] mt-2 pt-2"><span>Penghematan:</span><span class="font-semibold text-emerald-700 dark:text-emerald-300"><span id="len-save"></span>% lebih pendek</span></div><div class="mt-2 text-[10px] text-[var(--ink-3)]">Format biner: [header 3 | salt 16 | iv 12 | ciphertext+tag]. Header = versi, log2(memori KiB), t; ikut diautentikasi (AAD). Di-encode Base85 charset: 0-9A-Za-z!#$%&amp;()*+-;&lt;=&gt;?@^_`{|}~</div></div></div></div><div class="px-4 sm:px-5 py-3 bg-[var(--surface-2)] border-t border-[var(--border)] mono text-[10px] leading-[1.5] text-[var(--ink-3)] flex gap-3"><span id="params-foot">m_cost=262144 (256MB) • t=4 • p=1 • hashLen=32 • AES-GCM 256-bit • IV 12B • Salt 16B</span></div></div><div class="mt-6 rounded-[16px] border border-[var(--border)] bg-[var(--surface-2)]/80 p-4"><h3 class="serif text-[14px] font-semibold mb-2">Cara kerja mode paranoid negara</h3><ol id="howto" class="mono text-[11px] leading-[1.7] text-[var(--ink-2)] list-decimal pl-4 space-y-1"><li>Generate salt 16-byte &amp; IV 12-byte random via Web Crypto.</li><li>Sandi dinormalisasi (NFKC) lalu diturunkan jadi kunci 32-byte dengan Argon2id asli (RFC 9106, WebAssembly): 256MB, t=4, p=1. Berjalan di Web Worker agar halaman tidak membeku. Jika perangkat tidak mampu 256MB, turun ke 128MB/64MB (dicatat di header) disertai peringatan.</li><li>Enkripsi plaintext pakai AES-GCM 256-bit. Gabung biner [header|salt|iv|ciphertext+tag]; header ikut diautentikasi.</li><li>Encode biner ke Base85 (alfabet RFC 1924, 4 byte → 5 char) – sekitar 6% lebih pendek dari Base64.</li><li>Dekripsi: decode Base85 → baca header → derive kunci dengan parameter yang sama → AES-GCM decrypt. Sandi salah atau data diubah → gagal.</li></ol><p id="howto-note" class="mono text-[10px] text-[var(--ink-3)] mt-3">Catatan: Argon2id memakai implementasi mandiri (C → WebAssembly) yang diuji silang dengan libargon2 dan OpenSSL. Semua perhitungan terjadi di perangkatmu; tidak ada data dikirim ke server. Sandi hilang = data tidak bisa dipulihkan.</p></div><div id="page-foot" class="mt-6 text-center mono text-[10px] text-[var(--ink-3)]">Single file • Argon2id WASM • Tanpa server • Mobile 480px • Krem klasik</div></div></div></div>
+  <script id="kdf-src">/* KDF Argon2id (WebAssembly). Dipakai di Web Worker maupun di main thread. */
+(function (root) {
+  "use strict";
+
+  var WASM_B64 = "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ASAHIAQpAAU3AAUgByAEKQANNwANIAcgBCkAFTcAFSAHIAQvAB07AB0gByAELQAfOgAfIAdBIGohByACQQFqIgIgC00NAAsLIARC+cL4m5Gjs/DbADcDgAEgBELr+obav7X2wR83A3ggBEKf2PnZwpHagpt/NwNwIARC0YWa7/rPlIfRADcDaCAEQvHt9Pilp/2npX83A2AgBEKr8NP0r+68tzw3A1ggBEK7zqqm2NDrs7t/NwNQIARCADcDkAEgBEEANgKYAiAEQgA3A4gBIAQgASALQQV0ayIFNgKcAiAEIAWtQoiS95X/zPmE6gCFNwNIQUAhBQNAIARByABqIAUgBCgCmAJqakGQAWogBCAFaiIGQcAAai0AADoAACAEQcgAaiAFIAQoApgCampBkQFqIAZBwQBqLQAAOgAAIARByABqIAUgBCgCmAJqakGSAWogBkHCAGotAAA6AAAgBEHIAGogBSAEKAKYAmpqQZMBaiAGQcMAai0AADoAACAFQQRqIgUNAAsgBCAEKAKYAkHAAGo2ApgCIARByABqIAcQgoCAgAALIARBoAJqJICAgIAAC9caFgN/BH4BfwF+AX8BfgF/AX4BfwF+AX8DfgF/A34BfwF+AX8BfgF/AX4BfwJ+QQAhBANAIARBoJmAgABqIAAgBGoiBSkDACABIARqIgYpAwCFNwMAIARBqJmAgABqIAVBCGopAwAgBkEIaikDAIU3AwAgBEEQaiIEQYAIRw0ACwJAAkAgA0UNAEEAIQQDQCAEQaCRgIAAaiACIARqIgUpAwAgBEGgmYCAAGopAwCFNwMAIARBqJGAgABqIAVBCGopAwAgBEGomYCAAGopAwCFNwMAIARBEGoiBEGACEcNAAwCCwtBgHghBANAIARBoJmAgABqIARBoKGAgABqKQMANwMAIARBqJmAgABqIARBqKGAgABqKQMANwMAIARBsJmAgABqIARBsKGAgABqKQMANwMAIARBuJmAgABqIARBuKGAgABqKQMANwMAIARBIGoiBA0ACwtBACEEA0AgBEGgmYCAAGoiBSAEQdiZgIAAaiIGKQMAIgcgBEG4mYCAAGoiASkDACIIfCAIQgGGQv7///8fgyAHQv////8Pg358IgggBEGYmoCAAGoiACkDAIVCIIkiCSAEQfiZgIAAaiIDKQMAIgp8IApCAYZC/v///x+DIAlC/////w+DfnwiCiAHhUIoiSIHIAh8IAdC/////w+DIAhCAYZC/v///x+DfnwiCCAJhUIwiSIJIARByJmAgABqIgspAwAiDCAEQaiZgIAAaiINKQMAIg58IA5CAYZC/v///x+DIAxC/////w+DfnwiDiAEQYiagIAAaiIPKQMAhUIgiSIQIARB6JmAgABqIhEpAwAiEnwgEkIBhkL+////H4MgEEL/////D4N+fCISIAyFQiiJIgwgDnwgDEL/////D4MgDkIBhkL+////H4N+fCIOIBCFQjCJIhAgEnwgEEL/////D4MgEkIBhkL+////H4N+fCISIAyFQgGJIgwgBEHAmYCAAGoiEykDACIUIAUpAwAiFXwgFUIBhkL+////H4MgFEL/////D4N+fCIVIARBgJqAgABqIgUpAwCFQiCJIhYgBEHgmYCAAGoiFykDACIYfCAYQgGGQv7///8fgyAWQv////8Pg358IhggFIVCKIkiFCAVfCAUQv////8PgyAVQgGGQv7///8fg358IhV8IAxC/////w+DIBVCAYZC/v///x+DfnwiGYVCIIkiGiAEQdCZgIAAaiIbKQMAIhwgBEGwmYCAAGoiHSkDACIefCAeQgGGQv7///8fgyAcQv////8Pg358Ih4gBEGQmoCAAGoiHykDAIVCIIkiICAEQfCZgIAAaiIhKQMAIiJ8ICJCAYZC/v///x+DICBC/////w+DfnwiIiAchUIoiSIcIB58IBxC/////w+DIB5CAYZC/v///x+DfnwiHiAghUIwiSIgICJ8ICBC/////w+DICJCAYZC/v///x+DfnwiInwgGkL/////D4MgIkIBhkL+////H4N+fCIjIAyFQiiJIgwgGXwgDEL/////D4MgGUIBhkL+////H4N+fCIZNwMAIAAgGSAahUIwiSIZNwMAICEgGSAjfCAZQv////8PgyAjQgGGQv7///8fg358Ihk3AwAgCyAZIAyFQgGJNwMAIAUgCSAKfCAJQv////8PgyAKQgGGQv7///8fg358IgkgIiAchUIBiSIKIA58IApC/////w+DIA5CAYZC/v///x+DfnwiDCAVIBaFQjCJIg6FQiCJIhV8IAlCAYZC/v///x+DIBVC/////w+DfnwiFiAKhUIoiSIKIAx8IApC/////w+DIAxCAYZC/v///x+DfnwiGSAVhUIwiSIMNwMAIA0gGTcDACADIAwgFnwgDEL/////D4MgFkIBhkL+////H4N+fCIMNwMAIBsgDCAKhUIBiTcDACAPIAkgB4VCAYkiByAefCAHQv////8PgyAeQgGGQv7///8fg358IgkgEIVCIIkiCiAOIBh8IA5C/////w+DIBhCAYZC/v///x+DfnwiDHwgCkL/////D4MgDEIBhkL+////H4N+fCIOIAeFQiiJIgcgCXwgB0L/////D4MgCUIBhkL+////H4N+fCIQIAqFQjCJIgk3AwAgHSAQNwMAIBcgCSAOfCAJQv////8PgyAOQgGGQv7///8fg358Igk3AwAgBiAJIAeFQgGJNwMAIB8gCCAMIBSFQgGJIgd8IAhCAYZC/v///x+DIAdC/////w+DfnwiCCAghUIgiSIJIBJ8IAlC/////w+DIBJCAYZC/v///x+DfnwiCiAHhUIoiSIHIAh8IAdC/////w+DIAhCAYZC/v///x+DfnwiDCAJhUIwiSIINwMAIAEgDDcDACARIAggCnwgCEL/////D4MgCkIBhkL+////H4N+fCIINwMAIBMgCCAHhUIBiTcDACAEQYABaiIEQYAIRw0AC0EAIQQDQCAEQaCZgIAAaiIFIARBqJyAgABqIgYpAwAiByAEQaiagIAAaiIBKQMAIgh8IAhCAYZC/v///x+DIAdC/////w+DfnwiCCAEQaiggIAAaiIAKQMAhUIgiSIJIARBqJ6AgABqIgMpAwAiCnwgCkIBhkL+////H4MgCUL/////D4N+fCIKIAeFQiiJIgcgCHwgB0L/////D4MgCEIBhkL+////H4N+fCIIIAmFQjCJIgkgBEGom4CAAGoiCykDACIMIARBqJmAgABqIg0pAwAiDnwgDkIBhkL+////H4MgDEL/////D4N+fCIOIARBqJ+AgABqIg8pAwCFQiCJIhAgBEGonYCAAGoiESkDACISfCASQgGGQv7///8fgyAQQv////8Pg358IhIgDIVCKIkiDCAOfCAMQv////8PgyAOQgGGQv7///8fg358Ig4gEIVCMIkiECASfCAQQv////8PgyASQgGGQv7///8fg358IhIgDIVCAYkiDCAEQaCbgIAAaiITKQMAIhQgBSkDACIVfCAVQgGGQv7///8fgyAUQv////8Pg358IhUgBEGgn4CAAGoiBSkDAIVCIIkiFiAEQaCdgIAAaiIXKQMAIhh8IBhCAYZC/v///x+DIBZC/////w+DfnwiGCAUhUIoiSIUIBV8IBRC/////w+DIBVCAYZC/v///x+DfnwiFXwgDEL/////D4MgFUIBhkL+////H4N+fCIZhUIgiSIaIARBoJyAgABqIhspAwAiHCAEQaCagIAAaiIdKQMAIh58IB5CAYZC/v///x+DIBxC/////w+DfnwiHiAEQaCggIAAaiIfKQMAhUIgiSIgIARBoJ6AgABqIiEpAwAiInwgIkIBhkL+////H4MgIEL/////D4N+fCIiIByFQiiJIhwgHnwgHEL/////D4MgHkIBhkL+////H4N+fCIeICCFQjCJIiAgInwgIEL/////D4MgIkIBhkL+////H4N+fCIifCAaQv////8PgyAiQgGGQv7///8fg358IiMgDIVCKIkiDCAZfCAMQv////8PgyAZQgGGQv7///8fg358Ihk3AwAgACAZIBqFQjCJIhk3AwAgISAZICN8IBlC/////w+DICNCAYZC/v///x+DfnwiGTcDACALIBkgDIVCAYk3AwAgBSAJIAp8IAlC/////w+DIApCAYZC/v///x+DfnwiCSAiIByFQgGJIgogDnwgCkL/////D4MgDkIBhkL+////H4N+fCIMIBUgFoVCMIkiDoVCIIkiFXwgCUIBhkL+////H4MgFUL/////D4N+fCIWIAqFQiiJIgogDHwgCkL/////D4MgDEIBhkL+////H4N+fCIZIBWFQjCJIgw3AwAgDSAZNwMAIAMgDCAWfCAMQv////8PgyAWQgGGQv7///8fg358Igw3AwAgGyAMIAqFQgGJNwMAIA8gCSAHhUIBiSIHIB58IAdC/////w+DIB5CAYZC/v///x+DfnwiCSAQhUIgiSIKIA4gGHwgDkL/////D4MgGEIBhkL+////H4N+fCIMfCAKQv////8PgyAMQgGGQv7///8fg358Ig4gB4VCKIkiByAJfCAHQv////8PgyAJQgGGQv7///8fg358IhAgCoVCMIkiCTcDACAdIBA3AwAgFyAJIA58IAlC/////w+DIA5CAYZC/v///x+DfnwiCTcDACAGIAkgB4VCAYk3AwAgHyAIIAwgFIVCAYkiB3wgCEIBhkL+////H4MgB0L/////D4N+fCIIICCFQiCJIgkgEnwgCUL/////D4MgEkIBhkL+////H4N+fCIKIAeFQiiJIgcgCHwgB0L/////D4MgCEIBhkL+////H4N+fCIMIAmFQjCJIgg3AwAgASAMNwMAIBEgCCAKfCAIQv////8PgyAKQgGGQv7///8fg358Igg3AwAgEyAIIAeFQgGJNwMAIARBEGoiBEGAAUcNAAtBACEEA0AgAiAEaiIFIARBoJmAgABqKQMAIARBoJGAgABqKQMAhTcDACAFQQhqIARBqJmAgABqKQMAIARBqJGAgABqKQMAhTcDACAEQRBqIgRBgAhHDQALCwuvMQIAQYAIC6ABAAECAwQFBgcICQoLDA0ODw4KBAgJDw0GAQwAAgsHBQMLCAwABQIPDQoOAwYHAQkEBwkDAQ0MCw4CBgUKBAAPCAkABQcCBAoPDgELDAYIAw0CDAYKAAsIAwQNBwUPDgEJDAUBDw4NBAoABwYDCQIICw0LBw4MAQMJBQAPBAgGAgoGDw4JCwMACAwCDQcBBAoFCgIIBAcGAQUPCwkOAwwNAABBoAkLgDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+  var PAGE = 65536;
+  var MIN_PAGES = 3; /* harus sama dengan --initial-memory pada build.sh */
+
+  function b64ToBytes(b64) {
+    var bin = atob(b64);
+    var out = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  var modulePromise = null;
+  function getModule() {
+    if (!modulePromise) modulePromise = WebAssembly.compile(b64ToBytes(WASM_B64));
+    return modulePromise;
+  }
+
+  function align(x, a) {
+    return Math.ceil(x / a) * a;
+  }
+
+  /**
+   * Argon2id (RFC 9106, v1.3).
+   * @param {Uint8Array} password
+   * @param {Uint8Array} salt        minimal 8 byte
+   * @param {{memKiB:number,timeCost:number,parallelism?:number,hashLen?:number}} opts
+   * @returns {Promise<Uint8Array>}  tag sepanjang hashLen
+   * Melempar RangeError jika perangkat tidak dapat mengalokasikan memori.
+   */
+  async function argon2id(password, salt, opts) {
+    var memKiB = opts.memKiB;
+    var t = opts.timeCost;
+    var p = opts.parallelism || 1;
+    var hashLen = opts.hashLen || 32;
+
+    var mod = await getModule();
+    var memory = new WebAssembly.Memory({ initial: MIN_PAGES });
+    var inst = await WebAssembly.instantiate(mod, { env: { memory: memory } });
+
+    var pwdPtr = align(inst.exports.__heap_base.value, 16);
+    var saltPtr = align(pwdPtr + password.length, 16);
+    var outPtr = align(saltPtr + salt.length, 16);
+    var memPtr = align(outPtr + hashLen, 64);
+    var blocks = 4 * p * Math.floor(memKiB / (4 * p));
+    var pages = Math.ceil((memPtr + blocks * 1024) / PAGE);
+    var have = memory.buffer.byteLength / PAGE;
+    if (pages > have) memory.grow(pages - have); /* RangeError bila gagal */
+
+    var u8 = new Uint8Array(memory.buffer);
+    u8.set(password, pwdPtr);
+    u8.set(salt, saltPtr);
+    var rc = inst.exports.argon2id_hash(pwdPtr, password.length, saltPtr, salt.length, t, memKiB, p, hashLen, outPtr, memPtr);
+    if (rc !== 0) throw new Error("Parameter Argon2id tidak valid");
+    var out = u8.slice(outPtr, outPtr + hashLen);
+    u8.fill(0); /* bersihkan sandi dan memori kerja */
+    return out;
+  }
+
+  root.__KDF = { argon2id: argon2id };
+})(typeof self !== "undefined" ? self : globalThis);
+</script>
+  <script>/* PARANOID NEGARA - logika aplikasi (vanilla JS, tanpa dependensi, tanpa jaringan).
+ *
+ * Format data (sebelum Base85), versi 1:
+ *   [ versi(1) | log2(memori KiB)(1) | t(1) | salt(16) | iv(12) | ciphertext + tag GCM(16) ]
+ *   - Tiga byte pertama (header) ikut diautentikasi sebagai AAD pada AES-GCM.
+ *   - Parameter Argon2id dibaca dari header saat dekripsi, jadi fallback memori
+ *     (256 -> 128 -> 64 MB) saat enkripsi tetap bisa didekripsi.
+ *   - Argon2id: p=1, tag 32 byte, versi 0x13. Sandi dinormalisasi NFKC (UTF-8).
+ */
+(function () {
+  "use strict";
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ------------------------------------------------------------------ */
+  /* Ikon (lucide, data yang sama dengan versi sebelumnya)               */
+  /* ------------------------------------------------------------------ */
+  var ICONS = {"lock":[["rect",{"width":"18","height":"11","x":"3","y":"11","rx":"2","ry":"2"}],["path",{"d":"M7 11V7a5 5 0 0 1 10 0v4"}]],"lock-open":[["rect",{"width":"18","height":"11","x":"3","y":"11","rx":"2","ry":"2"}],["path",{"d":"M7 11V7a5 5 0 0 1 9.9-1"}]],"file-text":[["path",{"d":"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"}],["path",{"d":"M14 2v4a2 2 0 0 0 2 2h4"}],["path",{"d":"M10 9H8"}],["path",{"d":"M16 13H8"}],["path",{"d":"M16 17H8"}]],"zap":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"}]],"eye-off":[["path",{"d":"M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"}],["path",{"d":"M14.084 14.158a3 3 0 0 1-4.242-4.242"}],["path",{"d":"M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"}],["path",{"d":"m2 2 20 20"}]],"eye":[["path",{"d":"M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"}],["circle",{"cx":"12","cy":"12","r":"3"}]],"cpu":[["rect",{"width":"16","height":"16","x":"4","y":"4","rx":"2"}],["rect",{"width":"6","height":"6","x":"9","y":"9","rx":"1"}],["path",{"d":"M15 2v2"}],["path",{"d":"M15 20v2"}],["path",{"d":"M2 15h2"}],["path",{"d":"M2 9h2"}],["path",{"d":"M20 15h2"}],["path",{"d":"M20 9h2"}],["path",{"d":"M9 2v2"}],["path",{"d":"M9 20v2"}]],"trash-2":[["path",{"d":"M3 6h18"}],["path",{"d":"M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"}],["path",{"d":"M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"}],["line",{"x1":"10","x2":"10","y1":"11","y2":"17"}],["line",{"x1":"14","x2":"14","y1":"11","y2":"17"}]],"copy":[["rect",{"width":"14","height":"14","x":"8","y":"8","rx":"2","ry":"2"}],["path",{"d":"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"}]],"clock-3":[["circle",{"cx":"12","cy":"12","r":"10"}],["polyline",{"points":"12 6 12 12 16.5 12"}]],"shield-alert":[["path",{"d":"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"}],["path",{"d":"M12 8v4"}],["path",{"d":"M12 16h.01"}]]};
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function svgIcon(name, cls, id) {
+    var svg = document.createElementNS(SVG_NS, "svg");
+    var base = {
+      xmlns: SVG_NS, width: 24, height: 24, viewBox: "0 0 24 24", fill: "none",
+      stroke: "currentColor", "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round"
+    };
+    Object.keys(base).forEach(function (k) { svg.setAttribute(k, base[k]); });
+    svg.setAttribute("class", "lucide lucide-" + name + (cls ? " " + cls : ""));
+    if (id) svg.id = id;
+    ICONS[name].forEach(function (node) {
+      var el = document.createElementNS(SVG_NS, node[0]);
+      Object.keys(node[1]).forEach(function (k) { el.setAttribute(k, node[1][k]); });
+      svg.appendChild(el);
+    });
+    return svg;
+  }
+
+  function hydrateIcons(root) {
+    Array.prototype.forEach.call(root.querySelectorAll("i[data-icon]"), function (i) {
+      i.replaceWith(svgIcon(i.getAttribute("data-icon"), i.getAttribute("class"), i.id));
+    });
+  }
+
+  function swapIcon(id, name) {
+    var old = $(id);
+    old.replaceWith(svgIcon(name, (old.getAttribute("class") || "").replace(/\blucide\S*/g, "").trim(), id));
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Konstanta                                                           */
+  /* ------------------------------------------------------------------ */
+  var VERSION = 1;
+  var T_COST = 4;
+  var PARALLELISM = 1;
+  var HASH_LEN = 32;
+  var SALT_LEN = 16;
+  var IV_LEN = 12;
+  var TAG_LEN = 16;
+  var HEADER_LEN = 3;
+  var MIN_PASSWORD = 12;
+  var MEM_CHAIN = [262144, 131072, 65536]; /* KiB: 256 -> 128 -> 64 MB */
+  var LOGM_MIN = 13, LOGM_MAX = 19;        /* batas yang diterima saat dekripsi (8 MB .. 512 MB) */
+  var T_MAX = 10;
+
+  /* ------------------------------------------------------------------ */
+  /* Base85 (alfabet RFC 1924), 4 byte -> 5 karakter                     */
+  /* ------------------------------------------------------------------ */
+  var ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!#$%&()*+-;<=>?@^_`{|}~";
+  var LOOKUP = new Map();
+  for (var ai = 0; ai < ALPHABET.length; ai++) LOOKUP.set(ALPHABET[ai], ai);
+
+  function b85encode(bytes) {
+    var out = [];
+    for (var i = 0; i < bytes.length; i += 4) {
+      var rem = Math.min(4, bytes.length - i);
+      var v = 0;
+      for (var k = 0; k < 4; k++) v = v * 256 + (k < rem ? bytes[i + k] : 0);
+      var chars = ["", "", "", "", ""];
+      for (var d = 4; d >= 0; d--) { chars[d] = ALPHABET[v % 85]; v = Math.floor(v / 85); }
+      /* grup parsial (rem byte) -> rem+1 karakter */
+      out.push(rem === 4 ? chars.join("") : chars.slice(0, rem + 1).join(""));
+    }
+    return out.join("");
+  }
+
+  function b85decode(text) {
+    var s = text.replace(/\s+/g, "");
+    var n = s.length, rest = n % 5;
+    if (rest === 1) throw new Error("Panjang Base85 tidak valid.");
+    var out = new Uint8Array(Math.floor(n / 5) * 4 + (rest ? rest - 1 : 0));
+    var o = 0;
+    for (var i = 0; i < n; i += 5) {
+      var len = Math.min(5, n - i), v = 0;
+      for (var k = 0; k < 5; k++) {
+        /* grup parsial diisi digit maksimum (84 = '~'), bukan 0 */
+        var d = 84;
+        if (k < len) {
+          d = LOOKUP.get(s[i + k]);
+          if (d === undefined) throw new Error("Karakter Base85 tidak valid: \"" + s[i + k] + "\".");
+        }
+        v = v * 85 + d;
+      }
+      if (v > 4294967295) throw new Error("Data Base85 tidak valid (nilai grup melebihi 32-bit).");
+      for (var b = 0; b < len - 1; b++) out[o++] = (v >>> (24 - 8 * b)) & 255;
+    }
+    if (b85encode(out) !== s) throw new Error("Data Base85 tidak kanonik (kemungkinan terpotong atau rusak).");
+    return out;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* KDF Argon2id (WebAssembly) - di Web Worker, cadangan di main thread */
+  /* ------------------------------------------------------------------ */
+  var WORKER_GLUE =
+    "\n;self.onmessage=function(e){var d=e.data;" +
+    "self.__KDF.argon2id(d.pwd,d.salt,d.opts).then(" +
+    "function(k){self.postMessage({ok:true,key:k.buffer},[k.buffer])}," +
+    "function(x){self.postMessage({ok:false,name:x&&x.name,message:String(x&&x.message||x)})})};";
+
+  function infraError() { var e = new Error("worker tidak tersedia"); e.infra = true; return e; }
+
+  function deriveViaWorker(pwd, salt, opts) {
+    return new Promise(function (resolve, reject) {
+      var w, url;
+      try {
+        var src = $("kdf-src").textContent + WORKER_GLUE;
+        url = URL.createObjectURL(new Blob([src], { type: "text/javascript" }));
+        w = new Worker(url);
+      } catch (e) { reject(infraError()); return; }
+      function finish() { try { w.terminate(); URL.revokeObjectURL(url); } catch (e) { /* abaikan */ } }
+      w.onmessage = function (ev) {
+        var d = ev.data;
+        finish();
+        if (d.ok) { resolve(new Uint8Array(d.key)); return; }
+        var er = new Error(d.message);
+        er.name = d.name || "Error";
+        reject(er);
+      };
+      w.onerror = function (ev) { if (ev && ev.preventDefault) ev.preventDefault(); finish(); reject(infraError()); };
+      w.postMessage({ pwd: pwd, salt: salt, opts: opts });
+    });
+  }
+
+  async function deriveKey(pwd, salt, memKiB) {
+    var opts = { memKiB: memKiB, timeCost: T_COST, parallelism: PARALLELISM, hashLen: HASH_LEN };
+    if (typeof Worker === "function" && typeof Blob === "function" && self.URL && URL.createObjectURL) {
+      try { return await deriveViaWorker(pwd.slice(), salt.slice(), opts); }
+      catch (e) { if (!(e && e.infra)) throw e; }
+    }
+    /* cadangan: main thread (beri kesempatan UI menggambar dulu) */
+    await new Promise(function (r) { setTimeout(r, 50); });
+    return self.__KDF.argon2id(pwd.slice(), salt.slice(), opts);
+  }
+
+  function isMemoryError(e) {
+    return !!e && (e.name === "RangeError" || /memory|alloc/i.test(String(e.message)));
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* AES-GCM                                                             */
+  /* ------------------------------------------------------------------ */
+  async function aesImport(raw, usage) {
+    return crypto.subtle.importKey("raw", raw, { name: "AES-GCM" }, false, [usage]);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* UI                                                                  */
+  /* ------------------------------------------------------------------ */
+  var TAB_BASE = "flex-1 h-9 rounded-full text-[13px] font-semibold transition-all flex items-center justify-center gap-1.5 ";
+  var TAB_ON = TAB_BASE + "bg-[var(--ink)] text-[var(--bg)] shadow";
+  var TAB_OFF = TAB_BASE + "text-[var(--ink-2)] hover:text-[var(--ink)]";
+  var STATUS_OK = "mt-3 mono text-[11px] text-[var(--ink-2)] bg-[var(--surface-2)] border border-[var(--border)] rounded-[10px] px-3 py-2";
+  var STATUS_ERR = "mt-3 mono text-[11px] text-[var(--ink)] bg-[var(--red-bg)] border border-[var(--red-border)] rounded-[10px] px-3 py-2";
+
+  var state = { mode: "enc", busy: false, results: { enc: null, dec: null } };
+  var timer = null, startedAt = 0, creep = null;
+
+  function setStatus(msg, isError) {
+    var el = $("status");
+    el.className = isError ? STATUS_ERR : STATUS_OK;
+    el.textContent = msg || "";
+    el.hidden = !msg || state.busy;
+  }
+
+  function setWarning(msg) {
+    var box = $("warnings");
+    box.textContent = "";
+    if (!msg) return;
+    var wrap = document.createElement("div");
+    wrap.className = "mt-3 rounded-[12px] border border-amber-300 bg-amber-50 dark:bg-amber-950/30 px-3 py-2.5 flex gap-2";
+    wrap.appendChild(svgIcon("shield-alert", "w-4 h-4 text-amber-600 mt-0.5 shrink-0"));
+    var p = document.createElement("p");
+    p.className = "text-[11px] leading-[1.5] text-amber-900 dark:text-amber-200";
+    p.textContent = msg;
+    wrap.appendChild(p);
+    box.appendChild(wrap);
+  }
+
+  function setBar(pct) { $("busy-bar").style.width = Math.max(0, Math.min(100, pct)) + "%"; }
+
+  function tick() {
+    var now = performance.now();
+    $("busy-elapsed").textContent = ((now - startedAt) / 1000).toFixed(1) + "s";
+    if (creep) setBar(creep.from + (creep.to - creep.from) * (1 - Math.exp(-(now - creep.t0) / creep.tau)));
+  }
+
+  function setBusy(on, text) {
+    state.busy = on;
+    $("btn-run").disabled = on;
+    $("busy").hidden = !on;
+    if (on) {
+      $("status").hidden = true;
+      $("busy-text").textContent = text || "";
+      if (!timer) {
+        startedAt = performance.now();
+        setBar(3);
+        tick();
+        timer = setInterval(tick, 100);
+      }
+    } else if (timer) {
+      clearInterval(timer);
+      timer = null;
+      creep = null;
+    }
+  }
+
+  function stage(text, pct) { $("busy-text").textContent = text; creep = null; if (pct != null) setBar(pct); }
+  function stageKdf(text) {
+    $("busy-text").textContent = text;
+    creep = { from: 12, to: 92, t0: performance.now(), tau: 3000 };
+  }
+
+  function showResult() {
+    var res = state.results[state.mode];
+    $("result").hidden = !res;
+    if (!res) return;
+    $("output").value = res.text;
+    $("result-label").textContent = state.mode === "enc" ? "Hasil Enkripsi Base85 (ringkas)" : "Hasil Dekripsi Plaintext";
+    var sizes = $("sizes");
+    sizes.hidden = state.mode !== "enc";
+    if (state.mode === "enc") {
+      $("len-b64").textContent = res.b64Len;
+      $("len-b85").textContent = res.b85Len;
+      $("len-save").textContent = res.save.toFixed(2);
+    }
+  }
+
+  function showStats(res) {
+    if (!res) {
+      $("st-ram").textContent = "256 MB";
+      $("st-ram-sub").textContent = "paranoid";
+      $("st-time").textContent = "—";
+      $("st-save").textContent = "—";
+      return;
+    }
+    $("st-ram").textContent = (res.memKiB / 1024) + " MB";
+    $("st-ram-sub").textContent = res.memKiB < MEM_CHAIN[0] ? "fallback" : "paranoid";
+    $("st-time").textContent = (res.ms / 1000).toFixed(2) + "s";
+    $("st-save").textContent = state.mode === "enc" && res.save != null ? res.save.toFixed(1) + "%" : "—";
+  }
+
+  function friendlyError(e) {
+    var msg = (e && e.message) || String(e);
+    if (e && (e.name === "CompileError" || /WebAssembly|wasm|unsafe-eval|Content Security/i.test(msg)) && !isMemoryError(e)) {
+      return "Browser memblokir WebAssembly (kemungkinan kebijakan CSP/pratinjau). Buka file ini langsung di browser.";
+    }
+    return msg;
+  }
+
+  function setMode(mode) {
+    if (state.busy || mode === state.mode) return;
+    state.mode = mode;
+    var enc = mode === "enc";
+    $("tab-enc").className = enc ? TAB_ON : TAB_OFF;
+    $("tab-dec").className = enc ? TAB_OFF : TAB_ON;
+    $("input-label").textContent = enc ? "Pesan Rahasia" : "Hasil Enkripsi Base85";
+    $("input").placeholder = enc
+      ? "Tulis pesan yang ingin dienkripsi dengan mode paranoid..."
+      : "Tempel string Base85 hasil enkripsi di sini...";
+    $("run-label").textContent = enc ? "Enkripsi Paranoid" : "Dekripsi";
+    swapIcon("run-icon", enc ? "lock" : "lock-open");
+    setWarning("");
+    showResult();
+    showStats(state.results[mode]);
+    setStatus(enc ? "Mode enkripsi aktif — siap mengunci pesan." : "Mode dekripsi aktif — tempel Base85.");
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Enkripsi                                                            */
+  /* ------------------------------------------------------------------ */
+  async function encrypt() {
+    var text = $("input").value, pwdStr = $("pwd").value;
+    if (!text.trim()) { setStatus("Pesan kosong.", true); return; }
+    if (!pwdStr) { setStatus("Sandi wajib diisi.", true); return; }
+    if (Array.from(pwdStr).length < MIN_PASSWORD) { setStatus("Sandi minimal " + MIN_PASSWORD + " karakter.", true); return; }
+
+    state.results.enc = null;
+    showResult(); showStats(null); setWarning("");
+    setBusy(true, "Menyiapkan enkripsi...");
+    var pwd = new TextEncoder().encode(pwdStr.normalize("NFKC"));
+    var keyBytes = null;
+    try {
+      var salt = crypto.getRandomValues(new Uint8Array(SALT_LEN));
+      var iv = crypto.getRandomValues(new Uint8Array(IV_LEN));
+      var memKiB = 0, t0 = performance.now();
+
+      for (var i = 0; i < MEM_CHAIN.length; i++) {
+        stageKdf("Argon2id " + (MEM_CHAIN[i] / 1024) + "MB, t=" + T_COST + "...");
+        try { keyBytes = await deriveKey(pwd, salt, MEM_CHAIN[i]); memKiB = MEM_CHAIN[i]; break; }
+        catch (e) {
+          if (isMemoryError(e) && i < MEM_CHAIN.length - 1) {
+            stage("Gagal alokasi " + (MEM_CHAIN[i] / 1024) + "MB, mencoba " + (MEM_CHAIN[i + 1] / 1024) + "MB...", 10);
+            continue;
+          }
+          if (isMemoryError(e)) throw new Error("Perangkat tidak mampu mengalokasi memori untuk Argon2id (minimal " + (MEM_CHAIN[i] / 1024) + "MB).");
+          throw e;
+        }
+      }
+      var kdfMs = performance.now() - t0;
+
+      stage("Enkripsi AES-GCM 256-bit...", 96);
+      var header = new Uint8Array([VERSION, Math.round(Math.log2(memKiB)), T_COST]);
+      var key = await aesImport(keyBytes, "encrypt");
+      var ct = new Uint8Array(await crypto.subtle.encrypt(
+        { name: "AES-GCM", iv: iv, additionalData: header, tagLength: TAG_LEN * 8 },
+        key, new TextEncoder().encode(text)));
+
+      var packet = new Uint8Array(HEADER_LEN + SALT_LEN + IV_LEN + ct.length);
+      packet.set(header, 0);
+      packet.set(salt, HEADER_LEN);
+      packet.set(iv, HEADER_LEN + SALT_LEN);
+      packet.set(ct, HEADER_LEN + SALT_LEN + IV_LEN);
+
+      var b85 = b85encode(packet);
+      var b64Len = Math.ceil(packet.length / 3) * 4;
+      var res = { text: b85, memKiB: memKiB, ms: kdfMs, b64Len: b64Len, b85Len: b85.length, save: (1 - b85.length / b64Len) * 100 };
+      state.results.enc = res;
+      setBar(100);
+      setBusy(false);
+      showResult(); showStats(res);
+      if (memKiB < MEM_CHAIN[0]) {
+        setWarning("Perangkat tidak mampu alokasi 256MB. Otomatis turun ke " + (memKiB / 1024) +
+          "MB (tercatat di header, tetap bisa didekripsi). Tetap aman, tapi level paranoid turun.");
+      }
+      setStatus("Selesai dalam " + (kdfMs / 1000).toFixed(2) + "s");
+    } catch (e) {
+      setBusy(false);
+      setStatus("Gagal enkripsi: " + friendlyError(e), true);
+    } finally {
+      pwd.fill(0);
+      if (keyBytes) keyBytes.fill(0);
+    }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Dekripsi                                                            */
+  /* ------------------------------------------------------------------ */
+  async function decrypt() {
+    var raw = $("input").value, pwdStr = $("pwd").value;
+    if (!raw.trim()) { setStatus("Masukkan hasil enkripsi Base85.", true); return; }
+    if (!pwdStr) { setStatus("Sandi wajib diisi.", true); return; }
+
+    state.results.dec = null;
+    showResult(); showStats(null); setWarning("");
+    setBusy(true, "Membaca data...");
+    var pwd = new TextEncoder().encode(pwdStr.normalize("NFKC"));
+    var keyBytes = null;
+    try {
+      var data = b85decode(raw);
+      if (data.length < HEADER_LEN + SALT_LEN + IV_LEN + TAG_LEN) throw new Error("Data terlalu pendek, bukan format valid.");
+      var header = data.slice(0, HEADER_LEN);
+      if (header[0] !== VERSION) throw new Error("Versi format tidak dikenal (" + header[0] + "). Data ini bukan hasil alat ini.");
+      var logm = header[1], t = header[2];
+      if (logm < LOGM_MIN || logm > LOGM_MAX || t < 1 || t > T_MAX) throw new Error("Parameter pada header tidak valid.");
+      var memKiB = Math.pow(2, logm);
+      if (t !== T_COST) throw new Error("Parameter t pada header (" + t + ") tidak didukung versi ini.");
+      var salt = data.slice(HEADER_LEN, HEADER_LEN + SALT_LEN);
+      var iv = data.slice(HEADER_LEN + SALT_LEN, HEADER_LEN + SALT_LEN + IV_LEN);
+      var ct = data.slice(HEADER_LEN + SALT_LEN + IV_LEN);
+
+      var t0 = performance.now();
+      stageKdf("Argon2id " + (memKiB / 1024) + "MB, t=" + t + "...");
+      try { keyBytes = await deriveKey(pwd, salt, memKiB); }
+      catch (e) {
+        if (isMemoryError(e)) throw new Error("Perangkat ini tidak mampu mengalokasi " + (memKiB / 1024) + "MB yang dibutuhkan data ini. Coba di perangkat dengan RAM lebih besar.");
+        throw e;
+      }
+      var kdfMs = performance.now() - t0;
+
+      stage("Dekripsi AES-GCM...", 96);
+      var key = await aesImport(keyBytes, "decrypt");
+      var plain;
+      try {
+        plain = new Uint8Array(await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: iv, additionalData: header, tagLength: TAG_LEN * 8 }, key, ct));
+      } catch (e) { throw new Error("Sandi salah, atau data rusak/diubah."); }
+      var textOut;
+      try { textOut = new TextDecoder("utf-8", { fatal: true }).decode(plain); }
+      catch (e) { throw new Error("Dekripsi berhasil, tetapi isinya bukan teks UTF-8 yang valid."); }
+
+      var res = { text: textOut, memKiB: memKiB, ms: kdfMs };
+      state.results.dec = res;
+      setBar(100);
+      setBusy(false);
+      showResult(); showStats(res);
+      setStatus("Dekripsi berhasil " + (kdfMs / 1000).toFixed(2) + "s");
+    } catch (e) {
+      setBusy(false);
+      setStatus("Gagal dekripsi: " + friendlyError(e), true);
+    } finally {
+      pwd.fill(0);
+      if (keyBytes) keyBytes.fill(0);
+    }
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Clipboard & event                                                   */
+  /* ------------------------------------------------------------------ */
+  async function copyText(text) {
+    if (!text) { setStatus("Belum ada yang bisa disalin."); return; }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        throw new Error("no clipboard api");
+      }
+      setStatus("Disalin ke clipboard (lokal).");
+    } catch (e) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); setStatus("Disalin ke clipboard (lokal)."); }
+      catch (e2) { setStatus("Gagal copy otomatis, seleksi manual.", true); }
+      document.body.removeChild(ta);
+    }
+  }
+
+  function currentResultText() {
+    var res = state.results[state.mode];
+    return res ? res.text : "";
+  }
+
+  hydrateIcons(document);
+  $("tab-enc").addEventListener("click", function () { setMode("enc"); });
+  $("tab-dec").addEventListener("click", function () { setMode("dec"); });
+  $("toggle-pwd").addEventListener("click", function () {
+    var show = $("pwd").type === "password";
+    $("pwd").type = show ? "text" : "password";
+    swapIcon("eye-icon", show ? "eye-off" : "eye");
+  });
+  $("input").addEventListener("input", function () { $("char-count").textContent = $("input").value.length; });
+  $("btn-run").addEventListener("click", function () {
+    if (state.busy) return;
+    (state.mode === "enc" ? encrypt : decrypt)();
+  });
+  $("btn-clear").addEventListener("click", function () {
+    if (state.busy) return;
+    $("input").value = "";
+    $("char-count").textContent = "0";
+    state.results = { enc: null, dec: null };
+    showResult(); showStats(null); setWarning("");
+    setStatus("Dibersihkan.");
+  });
+  $("btn-copy").addEventListener("click", function () { copyText(currentResultText()); });
+  $("btn-copy-out").addEventListener("click", function () { copyText(currentResultText()); });
+})();
+</script>
+</body>
+</html>
