@@ -1,269 +1,139 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#FAF9F5">
-  <title>fork.id — Tools Online Gratis</title>
-  <link rel="stylesheet" href="./css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>fork.id - Tools Online Gratis</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F5; --card:#FFFFFF; --border:#E5E0D5; --border-strong:#111827;
+  --text:#111827; --text-2:#6B6B6B;
+}
+html[data-theme="dark"]{
+  --bg:#12100E; --card:#1C1916; --border:#2A241D; --border-strong:#E8E2D5;
+  --text:#E8E2D5; --text-2:#9A958B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:"Galaxie Copernicus","Copernicus","Instrument Serif","EB Garamond",Georgia,serif;
+  background:var(--bg); color:var(--text);
+  min-height:100dvh; height:100dvh; overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.home{
+  height:100dvh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  padding:20px; position:relative;
+}
+.theme{
+  position:fixed; top:18px; right:18px; width:40px; height:40px;
+  border-radius:999px; border:1px solid var(--border);
+  background:var(--card); display:grid; place-items:center; cursor:pointer;
+}
+.brand-row{display:flex; align-items:center; gap:14px; margin-bottom:32px}
+.logo{
+  width:80px; height:80px; border-radius:20px; background:var(--card);
+  border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+}
+.logo img{width:60%; height:60%; object-fit:contain}
+#brandImg{height:42px; width:auto}
+.search-wrap{position:relative; width:100%; max-width:520px}
+.search{
+  width:100%; height:52px; border-radius:999px;
+  border:1px solid var(--border); background:var(--card);
+  padding:0 20px 0 44px; font-size:17px; font-family:inherit;
+  outline:none; transition:border .15s;
+}
+.search:focus{border-color:var(--border-strong)}
+.search-wrap::before{
+  content:""; position:absolute; left:16px; top:50%; transform:translateY(-50%);
+  width:18px; height:18px; background:var(--text);
+  -webkit-mask:url('data:image/svg+xml,[STRIPPED]') center/contain no-repeat;
+  opacity:.6;
+}
+.list{
+  position:absolute; top:60px; left:0; right:0;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:16px; max-height:min(48dvh,360px); overflow:auto;
+  display:none; box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+.list.open{display:block}
+.item{padding:12px 16px; display:flex; justify-content:space-between; cursor:pointer; border-bottom:1px solid var(--border)}
+.item:hover{background:var(--bg)} .item small{color:var(--text-2); font-size:12px}
+footer{position:absolute; bottom:22px; left:0; right:0; text-align:center}
+footer p{font-size:11px; color:var(--text-2); font-family:Inter, sans-serif}
+.socials{display:flex; gap:14px; justify-content:center; margin-top:8px}
+.socials a{color:var(--text-2)} .socials svg{width:16px; height:16px}
+@media(max-width:420px){.logo{width:68px;height:68px}#brandImg{height:34px}}
+</style>
 </head>
-
 <body>
-  <div id="header-placeholder"></div>
-
-  <main id="tools">
-    <section class="intro" aria-labelledby="pageTitle">
-      <h1 id="pageTitle">Tools, made simple.</h1>
-      <p>Temukan alat online yang Anda butuhkan.</p>
-    </section>
-
-    <div class="search-wrap">
-      <svg class="search-icon" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <circle cx="11" cy="11" r="7"></circle>
-        <path d="m20 20-4-4"></path>
-      </svg>
-
-      <input
-        id="toolsInput"
-        class="search-input"
-        type="search"
-        placeholder="Cari tools..."
-        autocomplete="off"
-        role="combobox"
-        aria-label="Cari tools"
-        aria-autocomplete="list"
-        aria-expanded="false"
-        aria-controls="toolsList"
-      >
-
-      <div
-        id="toolsList"
-        class="search-list"
-        role="listbox"
-        aria-label="Hasil pencarian tools"
-      ></div>
+<button class="theme" id="themeBtn" aria-label="theme">◐</button>
+<div class="home">
+  <div class="brand-row">
+    <div class="logo">
+      <!-- GANTI DI SINI - PATH LOGO -->
+      <img id="logoImg" src="./fork_logo_light.png" alt="logo">
     </div>
-  </main>
+    <!-- GANTI DI SINI - PATH BRAND -->
+    <img id="brandImg" src="./fork_brand_light.png" alt="FORK.ID">
+  </div>
+  <div class="search-wrap">
+    <input id="q" class="search" placeholder="Tools..." autocomplete="off">
+    <div id="list" class="list"></div>
+  </div>
+  <footer><p>2026 fork.id</p>
+    <div class="socials">
+      <a href="#">IG</a><a href="#">GH</a><a href="#">iNat</a>
+    </div>
+  </footer>
+</div>
 
-  <div id="footer-placeholder"></div>
+<script>
+// GANTI DI SINI - PATH LOGO
+const LOGO_SOURCES = {
+  light: "./fork_logo_light.png",  // ganti file light
+  dark: "./fork_logo_dark.png"     // ganti file dark
+};
+// GANTI DI SINI - PATH BRAND
+const BRAND_SOURCES = {
+  light: "./fork_brand_light.png",
+  dark: "./fork_brand_dark.png"
+};
+// GANTI DI SINI - PATH TOOLS.JSON
+const TOOLS_PATH = "./tools.json";
 
-  <script src="./include-layout.js"></script>
-  <script>
-    const TOOLS_PATH = "./tools.json";
-    const CACHE_KEY = "fork-tools-v1";
-    const CACHE_TTL = 60 * 60 * 1000;
-
-    const input = document.getElementById("toolsInput");
-    const list = document.getElementById("toolsList");
-
-    let tools = [];
-    let activeIndex = -1;
-
-    async function loadTools() {
-      try {
-        const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || "null");
-
-        if (
-          cached &&
-          Array.isArray(cached.data) &&
-          Date.now() - cached.savedAt < CACHE_TTL
-        ) {
-          tools = cached.data;
-          return;
-        }
-      } catch {
-        // Cache tidak tersedia atau tidak valid; ambil JSON dari server.
-      }
-
-      try {
-        const response = await fetch(TOOLS_PATH, { cache: "no-cache" });
-        if (!response.ok) throw new Error("Gagal memuat tools.json");
-
-        const data = await response.json();
-        if (!Array.isArray(data)) throw new Error("Format tools.json tidak valid");
-
-        tools = data;
-
-        try {
-          localStorage.setItem(
-            CACHE_KEY,
-            JSON.stringify({ savedAt: Date.now(), data })
-          );
-        } catch {
-          // Pencarian tetap berjalan jika localStorage tidak tersedia.
-        }
-      } catch (error) {
-        console.error(error);
-        tools = [];
-      }
-    }
-
-    function editDistance(a, b) {
-      const row = Array.from({ length: b.length + 1 }, (_, i) => i);
-
-      for (let i = 1; i <= a.length; i++) {
-        let diagonal = row[0];
-        row[0] = i;
-
-        for (let j = 1; j <= b.length; j++) {
-          const above = row[j];
-          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-
-          row[j] = Math.min(
-            row[j] + 1,
-            row[j - 1] + 1,
-            diagonal + cost
-          );
-          diagonal = above;
-        }
-      }
-
-      return row[b.length];
-    }
-
-    function fuzzyMatch(value, query) {
-      const text = String(value || "").toLowerCase();
-
-      if (text.includes(query)) return true;
-      if (query.length < 4) return false;
-
-      return text
-        .split(/[\s-]+/)
-        .some(word => editDistance(word, query) <= 1);
-    }
-
-    function getMatches(query) {
-      const q = query.trim().toLowerCase();
-      if (!q) return tools;
-
-      return tools.filter(tool => {
-        const tags = Array.isArray(tool.tags) ? tool.tags : [];
-
-        return (
-          fuzzyMatch(tool.title, q) ||
-          fuzzyMatch(tool.desc, q) ||
-          tags.some(tag => fuzzyMatch(tag, q))
-        );
-      });
-    }
-
-    function render(query = "") {
-      const matches = getMatches(query);
-      activeIndex = -1;
-      list.replaceChildren();
-
-      if (!matches.length) {
-        const empty = document.createElement("div");
-        empty.className = "empty-result";
-        empty.textContent = `Tidak ada tools untuk "${query}"`;
-        list.appendChild(empty);
-        return;
-      }
-
-      matches.forEach((tool, index) => {
-        const item = document.createElement("button");
-        item.type = "button";
-        item.className = "search-item";
-        item.setAttribute("role", "option");
-        item.setAttribute("aria-selected", "false");
-
-        const details = document.createElement("span");
-
-        const title = document.createElement("span");
-        title.className = "tool-title";
-        title.textContent = tool.title || "Untitled tool";
-
-        const description = document.createElement("span");
-        description.className = "tool-description";
-        const tags = Array.isArray(tool.tags) ? tool.tags.join(", ") : "";
-        description.textContent = [tool.desc, tags].filter(Boolean).join(" • ");
-
-        const arrow = document.createElement("span");
-        arrow.className = "tool-arrow";
-        arrow.setAttribute("aria-hidden", "true");
-        arrow.textContent = "↗";
-
-        details.append(title, description);
-        item.append(details, arrow);
-
-        item.addEventListener("click", () => {
-          if (tool.url) window.location.href = tool.url;
-        });
-
-        list.appendChild(item);
-      });
-    }
-
-    function openList() {
-      list.classList.add("open");
-      input.setAttribute("aria-expanded", "true");
-    }
-
-    function closeList() {
-      list.classList.remove("open");
-      input.setAttribute("aria-expanded", "false");
-      input.removeAttribute("aria-activedescendant");
-      activeIndex = -1;
-    }
-
-    function setActive(index) {
-      const items = [...list.querySelectorAll(".search-item")];
-      if (!items.length) return;
-
-      activeIndex = (index + items.length) % items.length;
-
-      items.forEach((item, i) => {
-        const selected = i === activeIndex;
-        item.setAttribute("aria-selected", String(selected));
-
-        if (selected) {
-          item.id = `tool-option-${i}`;
-          input.setAttribute("aria-activedescendant", item.id);
-          item.scrollIntoView({ block: "nearest" });
-        } else {
-          item.removeAttribute("id");
-        }
-      });
-    }
-
-    input.addEventListener("focus", () => {
-      render(input.value);
-      openList();
-    });
-
-    input.addEventListener("input", () => {
-      render(input.value);
-      openList();
-    });
-
-    input.addEventListener("keydown", event => {
-      if (event.key === "ArrowDown") {
-        event.preventDefault();
-        openList();
-        setActive(activeIndex + 1);
-      } else if (event.key === "ArrowUp") {
-        event.preventDefault();
-        openList();
-        setActive(activeIndex - 1);
-      } else if (event.key === "Enter") {
-        const selected = list.querySelector('[aria-selected="true"]');
-        if (selected) {
-          event.preventDefault();
-          selected.click();
-        }
-      } else if (event.key === "Escape") {
-        closeList();
-      }
-    });
-
-    document.addEventListener("click", event => {
-      if (!event.target.closest(".search-wrap")) closeList();
-    });
-
-    loadTools().then(() => {
-      if (document.activeElement === input) render(input.value);
-    });
-  </script>
+let TOOLS=[];
+async function load(){ try{ TOOLS=await (await fetch(TOOLS_PATH)).json()}catch{ TOOLS=[
+  {title:"PDF Tools", tags:["pdf","document"], url:"./pdf-tools.html", desc:"Merge, split PDF"},
+  {title:"Image Compressor", tags:["image"], url:"#", desc:"Kompres gambar"}
+]}}
+const html=document.documentElement;
+function apply(t){
+  html.setAttribute("data-theme",t);
+  localStorage.setItem("fork-theme",t);
+  document.getElementById("logoImg").src=LOGO_SOURCES[t];
+  document.getElementById("brandImg").src=BRAND_SOURCES[t];
+}
+const saved=localStorage.getItem("fork-theme")||"light";
+apply(saved);
+document.getElementById("themeBtn").onclick=()=>{
+  const n=html.getAttribute("data-theme")==="light"?"dark":"light";
+  apply(n);
+};
+const q=document.getElementById("q"), list=document.getElementById("list");
+function render(v=""){
+  const s=v.toLowerCase().trim();
+  const f=!s?TOOLS:TOOLS.filter(t=>t.title.toLowerCase().includes(s)||t.tags.some(x=>x.toLowerCase().includes(s)));
+  list.innerHTML=f.map(t=>`<div class="item" data-url="${t.url}"><div><b>${t.title}</b><br><small>${t.desc}</small></div><span>↗</span></div>`).join("")||`<div style="padding:14px;text-align:center"><small>Tidak ada</small></div>`;
+}
+q.addEventListener("focus",()=>{render(q.value);list.classList.add("open")});
+q.addEventListener("input",()=>{render(q.value);list.classList.add("open")});
+list.addEventListener("click",e=>{const it=e.target.closest(".item"); if(it) location.href=it.dataset.url});
+document.addEventListener("click",e=>{if(!e.target.closest(".search-wrap")) list.classList.remove("open")});
+load().then(()=>render());
+</script>
 </body>
 </html>
