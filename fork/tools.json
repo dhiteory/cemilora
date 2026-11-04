@@ -1,0 +1,92 @@
+[
+  {
+    "title": "PDF Tools",
+    "tags": [
+      "pdf",
+      "document",
+      "merge",
+      "split",
+      "compress"
+    ],
+    "url": "./pdf-tools.html",
+    "desc": "Merge, split, compress PDF"
+  },
+  {
+    "title": "Image Compressor",
+    "tags": [
+      "image",
+      "jpg",
+      "png",
+      "compress",
+      "photo"
+    ],
+    "url": "./image-compressor.html",
+    "desc": "Kompres JPG & PNG instan"
+  },
+  {
+    "title": "QR Generator",
+    "tags": [
+      "qr",
+      "barcode",
+      "generator",
+      "qrcode"
+    ],
+    "url": "./qr-generator.html",
+    "desc": "Buat QR code custom"
+  },
+  {
+    "title": "JSON Formatter",
+    "tags": [
+      "json",
+      "formatter",
+      "developer",
+      "api"
+    ],
+    "url": "./json-formatter.html",
+    "desc": "Format & validate JSON"
+  },
+  {
+    "title": "Word Counter",
+    "tags": [
+      "text",
+      "word",
+      "counter",
+      "document"
+    ],
+    "url": "./word-counter.html",
+    "desc": "Hitung kata & karakter"
+  },
+  {
+    "title": "Background Remover",
+    "tags": [
+      "image",
+      "background",
+      "remove",
+      "bg"
+    ],
+    "url": "./bg-remover.html",
+    "desc": "Hapus background otomatis"
+  },
+  {
+    "title": "Color Picker",
+    "tags": [
+      "color",
+      "picker",
+      "palette",
+      "design"
+    ],
+    "url": "./color-picker.html",
+    "desc": "Ambil kode warna"
+  },
+  {
+    "title": "Base64 Tools",
+    "tags": [
+      "base64",
+      "encode",
+      "decode",
+      "developer"
+    ],
+    "url": "./base64.html",
+    "desc": "Encode decode Base64"
+  }
+]
